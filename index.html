@@ -14,18 +14,25 @@
         <div class="card">
             <div class="profile-informations">
                 <img src="./img/Screenshot_20211106-092415_Facebook.jpg" alt="Profile picture image">
-                <p>Fábio Resende <span class="age">33</span></p>
-                <span class="city">Manaus</span>
+                <p>Fábio Resende  <span class="age">Jhamilly</span></p>
+                <span class="city">Novo Remanso</span>
+                <button class="clic" onclick="abrirModal()">Clique aqui</button>
+                <div class="modal" id="meuModal">
+    <div class="modal-content">
+      <h2>🌸 Uma mensagem pra você 🌸</h2>
+      <p>Você é especial demais, sabia? Que Deus ilumine sempre seus passos e que sua vida seja cheia de paz, amor e conquistas! ✨💖</p>
+      <button class="close-btn" onclick="fecharModal()">Fechar</button>
+    </div>
             </div>
             <hr>
             <ul class="profile-numbers">
                 <li class="info">
-                    <p class="counter">80K</p>
-                    <span class="counter-type">Followers</sp>
+                    <p class="counter">800K</p>
+                    <span class="counter-type">Inicio</sp>
                 </li>
                 <li class="info">
-                    <p class="counter">803K</p>
-                    <span class="counter-type">Likes</span>
+                    <p class="counter">8003K</p>
+                    <span class="counter-type">Vidios</span>
                 </li>
                 <li class="info">
                     <p class="counter">1.4K</p>
@@ -34,5 +41,15 @@
             </ul>
         </div>
     </main>
+
+      <script>
+    function abrirModal() {
+      document.getElementById('meuModal').style.display = 'flex';
+    }
+
+    function fecharModal() {
+      document.getElementById('meuModal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
