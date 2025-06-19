@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
+@media (max-width: 480px) {
+  .card {
+    padding: 20px 15px;
+  }
+
+  .profile-informations p {
+    font-size: 18px;
+  }
+
+  .clic {
+    font-size: 14px;
+  }
+}
 
 body{
     background-color: var(--background-color);
