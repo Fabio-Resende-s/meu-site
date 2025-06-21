@@ -14,6 +14,9 @@
   }
 }
 
+html{
+    font-family: Poppins, sans-serif;
+}
 body{
     background-color: var(--background-color);
     height: 100vh;
@@ -80,6 +83,9 @@ hr{
     color: var(--text-color);
 }
 
+.profile-numbers :hover{
+    color: #5ccd5a;}
+
   .clic {
       padding: 10px 20px;
       font-size: 18px;
@@ -102,6 +108,7 @@ hr{
       align-items: center;
     }
       .modal-content {
+        font-family: poppins, sans-serif;
       background: white;
       padding: 30px;
       border-radius: 15px;
@@ -115,10 +122,19 @@ hr{
 
     .close-btn {
       margin-top: 20px;
-      background-color: #ff69b4;
+      background-color: #1b08eb;
       color: white;
       border: none;
       padding: 10px 20px;
       border-radius: 8px;
       cursor: pointer;
+    }
+    .fina{
+      font-size: 20px;
+      color: #6a5acd;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+    strong{
+      color: #6a5acd;
     }
