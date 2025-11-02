@@ -1,64 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="./variables.css">
-    <link rel="stylesheet" href="./style.css">
-    <title>MENSAGEM DE FÁBIO</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Homenagem — Jhamilly (16 anos)</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="container">
-        <div class="card">
-            <div class="profile-informations">
-                <img src="./img/boat.png" alt="Profile picture image">
-                <p>Fábio Resende  <span class="age"></span></p>
-                <span class="city">Novo Remanso</span>
-                <button class="clic" onclick="abrirModal()">Clique aqui</button>
-                <div class="modal" id="meuModal">
-    <div class="modal-content">
-      <h2> Uma mensagem pra você </h2><br>
 
-      <p>🎉 Sababou com Jesus no coração! 🙌<p><br>
-        
-<p>O fim de semana chegou, e nada melhor do que recarregar as energias com fé, alegria e boas companhias!<p><br>
-
-<p>💬 Já anota aí:
-<br>
-Neste sábado, às 19h, tem o nosso <strong>Culto Jovem</strong>  na IBAFÉ!
-Vai ser um tempo de louvor, palavra e muita comunhão com a galera. 💒🔥<br>
-
-💙 Você é nosso(a) convidado(a)! Vem viver algo novo com Deus, fazer novas amizades e fortalecer sua fé.</p><br>
-<p>IBAFÉ — Um lugar de esperança e transformação! 🙏</p><br>
-
-<p class=" fina">#CultoJovemIBAFÉ<br>#FimdeSemanaComPropósito<br> #VemPraIBAFÉ</p>
-      <button class="close-btn" onclick="fecharModal()">Fechar</button>
+  <!-- ENTRY / PASSWORD -->
+  <div class="entry" id="entryScreen">
+    <div class="entry-box">
+      <h1>Feliz 16 anos, Jhamilly!</h1>
+      <p>Para entrar na homenagem, digite a senha que seu pai preparou 💖</p>
+      <input id="pwdInput" class="input" type="password" placeholder="Digite a senha (ex: amordepai)" />
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:14px">
+        <button id="enterBtn" class="btn">Entrar</button>
+        <button id="cancelBtn" class="linkless">Fechar</button>
+      </div>
+      <p style="font-size:13px;color:#6b4a5a;margin-top:10px">Dica: senha de pai para filha 💌</p>
     </div>
+  </div>
+
+  <header id="siteHeader" style="display:none">
+    <div class="logo">
+      <div class="dot">❤</div>
+      <div>
+        <h2 style="margin:0">Homenagem — Amor de Pai</h2>
+        <div style="font-size:13px;color:#6b4a5a">Jhamilly · 16 anos</div>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent" style="display:none">
+    <div class="card-wrap">
+      <section class="card card-flip" id="tributeCard">
+        <div class="card-inner">
+          <div class="side front">
+            <div class="hearts">💕</div>
+            <h2>Para Jhamilly</h2>
+            <div class="subtitle">Amor de Pai — Uma homenagem especial</div>
+            <p class="message" id="tributeMessage">Filha, mesmo distante, cada lembrança sua vive em mim. Cada sorriso seu ilumina meus dias e cada conquista sua enche meu coração de orgulho. Feliz aniversário! Com amor, seu pai.</p>
+            <div class="actions">
+              <button id="flipBtn" class="btn">Abrir Cartão</button>
+              <button id="playMusicBtn" class="small">Tocar música</button>
+              <a id="downloadBtn" class="small" href="#" download="homenagem_jhamilly.html">Baixar página</a>
             </div>
-            <hr>
-            <ul class="profile-numbers">
-                <li class="info">
-                    <p class="counter">IBAFÉ</p>
-                    <span class="counter-type" >uma mensagem pra você</span>
-                </li>
-                
-            </ul>
+          </div>
+
+          <div class="side back" style="background:linear-gradient(180deg,var(--accent-2),#fff)">
+            <h3 style="margin:0">Mensagem especial</h3>
+            <p style="padding:12px;max-width:380px;text-align:center">Jhamilly, apesar do tempo e da distância, meus pensamentos e orações estão sempre com você. Que esta nova idade abra portas de alegria, paz e muitas bênçãos. Sempre que olhar para este cartão, lembre-se: seu pai te ama infinitamente.</p>
+            <button id="closeCardBtn" class="btn">Fechar</button>
+          </div>
         </div>
-    </main>
+      </section>
 
-      <script>
-    function abrirModal() {
-      document.getElementById('meuModal').style.display = 'flex';
-    }
+      <aside class="gallery card">
+        <div class="viewer" id="mainViewer"></div>
+        <div class="thumbnails" id="thumbs"></div>
+        <div class="controls">
+          <button id="prevBtn" class="small">◀ Anterior</button>
+          <button id="nextBtn" class="small">Próximo ▶</button>
+          <div style="flex:1"></div>
+          <div style="font-size:13px;color:#6b4a5a">Clique na miniatura para abrir em tela maior</div>
+        </div>
+      </aside>
+    </div>
+    <footer>Feito com carinho por seu pai — Uma homenagem de amor.</footer>
+  </main>
 
-    function fecharModal() {
-      document.getElementById('meuModal').style.display = 'none';
-    }
-  </script>
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <div class="modal-top">
+        <strong id="modalTitle">Mídia</strong>
+        <div>
+          <button id="closeModal" class="small">Fechar ✕</button>
+        </div>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- música de fundo (instrumental suave) -->
+  <audio id="bgMusic" loop>
+    <source src="img/musica1.mp3" type="audio/mpeg">
+    <source src="img/musica1.mp3" type="audio/mpeg">
+  </audio>
+  
+<script src="./script.js"></script>
 </body>
 </html>
